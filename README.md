@@ -97,5 +97,5 @@ Flash messages for common issues (like login failure)
 
 👨‍💻 Author
 Salauddin Khan Apon
-Full-Stack Developer
-MERN Stack Lover from Barishal, Bangladesh 🇧🇩
+MERN Stack Developer.
+Keep Coding......
