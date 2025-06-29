@@ -1,0 +1,33 @@
+<%- layout('layout/mainLayout.ejs') %>
+
+  <div class="container bg-light  py-5 ">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10 col-sm-12 bg-light p-4 rounded shadow ">
+        <form method="post" action="/blogs/<%= blogsEdit._id %>/edited" novalidate class="needs-validation">
+          <div class="row">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <h4 class="text-center fw-bold pb-4">Edit Blogs </h4>
+            <div class="mb-3 col-12">
+              <!-- <label for="inputGroup-sizing-lg" class="form-label">Enter your Email address</label> -->
+              <input type="text" name="edited[title]" class="form-control p-text-black " id="inputGroup-sizing-lg "
+                style="height: 3rem;" value="<%= blogsEdit.title %>" aria-describedby="emailHelp" required>
+              <div class="invalid-feedback">Enter blog title.</div>
+            </div>
+            <div class="mb-3 col-12">
+              <div class="form-floating">
+                <textarea class="form-control p-text-black text-dark " name="edited[content]" id="floatingTextarea2"
+                  style="height: 100px" required><%= blogsEdit.content %></textarea>
+                <div class="invalid-feedback">Enter blog content</div>
+              </div>
+            </div>
+            <div class="mb-3 col-12">
+              <!-- <label for="inputGroup-sizing-lg" class="form-label">Enter your Email address</label> -->
+              <input type="text" name="edited[url]" class="form-control p-text-black " id="inputGroup-sizing-lg "
+                style="height: 3rem;" aria-describedby="emailHelp" value="<%= blogsEdit.image %>">
+              <div class="invalid-feedback">Enter Image URL's</div>
+            </div>
+            <button type="submit" class="btn btn-warning text-light ms-3 w-25">Submit edit</button>
+        </form>
+      </div>
+    </div>
+  </div>

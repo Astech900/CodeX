@@ -1,0 +1,48 @@
+<% layout('layout/mainLayout') -%>
+
+    <div class="container bg-light  py-5 ">
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8 col-md-10 col-sm-12 bg-light p-4 rounded shadow position-relative">
+                <% if(String(currentUser)===String(blogData.userData)) { %>
+                    
+                        <button class="dots-btn  position-absolute top-0 end-0 me-4 z-3 mt-2 "
+                            data-bs-toggle="dropdown">
+                            <i class="bi bi-three-dots"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="/blogs/<%= blogData._id %>/edit">Edit Post</a></li>
+                            <li><a class="dropdown-item" href="/blogs/<%= blogData._id %>/delete">Delete Post</a></li>
+                            <li><a class="dropdown-item" href="#">Pin Post</a></li>
+                        </ul>
+                        <% } %>
+
+
+                            <div class="card w-100 bg-light">
+                                <div class="card-title fs-2 fw-normal">
+                                    <b>
+                                        <%= blogData.title %>
+                                    </b>
+                                </div>
+                                <!-- showing date function -->
+
+                                <% const d=new Date(blogData.createdAt); %>
+                                    <% const formatted=d.toDateString().split(" "); %>
+                          <p class=" text-muted small">
+                                        Posted on <%= `${formatted[2]} ${formatted[1]} ${formatted[3]}` %> by <%=
+                                                blogData.author %>
+                                                </p>
+                                                <img src="<%= blogData.image %>" alt="" class="rounded-3"
+                                                    style="width: 100%; height: 23rem; object-fit: cover;">
+                                                <p class="card-text pt-4 ">
+                                                    <%= blogData.content %>
+                                                </p>
+
+
+                            </div>
+
+            </div>
+
+        </div>
+
+    </div>

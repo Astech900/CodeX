@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../layout/headModule.ejs') %>
+
+    <body>
+
+        <div class="log-in-container position-relative ">
+             <a class="offcanvas-title position-absolute start-20 fixed-top text-light fw-bold  text-decoration-none" href="/" id="offcanvasNavbarLabel" style="font-size: 2rem; margin-top: 1rem;
+             margin-left: 2rem;"><b><i>CodeX</i></b></a>
+            <div class="position-absolute fixed-top">
+                <%- include('flashError.ejs') %>
+            </div>
+            <div class="position-absolute start-50 translate-middle-x">
+
+                <form method="POST" action="/user/login?_method=PUT" novalidate
+                    class="border border-info rounded-4 needs-validation" style="width: 300px;">
+                    <div class="text-light rounded-shadow">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <div class="row p-4">
+                            <h3 class="text-light m-0">Log In</h3>
+                            <div class="mb-3 col-12">
+                                <label for="exampleInputEmail1" class="form-label">Enter your Email address</label>
+                                <input type="email" name="login[email]"
+                                    class="form-control bg-transparent text-light forminputborderColor place-text-white "
+                                    id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                                <div class="invalid-feedback">Enter Valid Email </div>
+                                <div id="emailHelp" class="form-text text-light">We'll never share your email with
+                                    anyone
+                                    else.</div>
+                            </div>
+                            <div class="mb-3 col-12">
+                                <label for="exampleInputPassword1" class="form-label">Enter your Password</label>
+                                <input type="password" name="login[password]"
+                                    class="form-control bg-transparent text-light forminputborderColor place-text-white"
+                                    id="exampleInputPassword1" required>
+                                <div class="invalid-feedback">Enter Valid password</div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-info ms-4 mb-4 text-light">log in</button>
+
+                    <!-- Sign Up Link -->
+                    <div class="text-center">
+                        <a href="/user/signup" class="signup-link text-decoration-none text-light d-block p-2">Or SIGN
+                            UP</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+            crossorigin="anonymous"></script>
+        <script src="/javascripts/script.js"></script>
+
+    </body>
+
+
+</html>

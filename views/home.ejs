@@ -1,0 +1,32 @@
+<% layout('layout/mainLayout') -%>
+
+
+    <div class="container-fluid d-flex justify-content-center  "
+        style="padding-top: 3rem; padding-bottom: 1.2rem; padding-left: 0.8rem;">
+        <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 g-4 d-flex justify-content-center blog-box">
+            <% for(data of blog) { %>
+                <a href="/blog/<%= data._id %>" class="text-decoration-none card-hover  ">
+                    <div class="card p-0" style="margin-right: 1.1rem">
+                        <img src="<%= data.image %>" class="card-img-top ">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <b>
+                                    <%= data.title %>
+                                </b>
+                            </div>
+                            <% const d=new Date(data.createdAt); %>
+                                <% const formatted=d.toDateString().split(" "); %>
+                                          <p class=" text-muted small mb-0">
+                                    Posted on <%= `${formatted[2]} ${formatted[1]} ${formatted[3]}` %> by <%=
+                                            data.author %>
+                                            </p>
+
+                                         <p class="card-text fw-normal">
+                                     <%= data.content.slice(0, 40) %>...
+                                 </p>
+                        </div>
+                    </div>
+                </a>
+                <% } %>
+        </div>
+    </div>

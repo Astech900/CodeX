@@ -1,0 +1,199 @@
+.main-Box {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-brand {
+    color: #2DCC8D;
+    font-weight: 600;
+    font-size: 1.8rem;
+    transition: 0.3s color;
+}
+
+.navbar-brand:hover {
+    color: #000;
+}
+
+.login-button {
+    background-color: #2DCC8D;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+.login-button:hover {
+    background-color: #70E3AD;
+}
+
+.navbar-toggler {
+    border: none;
+    outline: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus,
+.btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #666777;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #000;
+    visibility: inherit;
+}
+
+@media (min-width: 991px) {
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #2DCC8D;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before,
+    .nav-link.active::before {
+        width: 100%;
+        visibility: visible;
+
+    }
+}
+
+
+.main-Box {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/sumup-8vcWbhHyl80-unsplash.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    border-radius: 20px;
+    border: none !important;
+}
+
+.card-img-top {
+    width: 100%;
+    border-top-left-radius: 1rem !important;
+    border-top-right-radius: 1rem !important;
+    height: 15rem !important;
+
+}
+
+
+/* Add smooth animation */
+.card-hover .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.card-hover:hover .card {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Optional: glow effect on image */
+.card-hover:hover .card-img-top {
+    filter: brightness(1.1);
+}
+
+
+@media (max-width: 576px) {
+    .blog-box {
+        margin-left: 1rem;
+    }
+}
+
+
+.footer-style {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.log-in-container {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/images/sumup-8vcWbhHyl80-unsplash.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.forminputborderColor:focus {
+    border: 1px solid #0DCAF0;
+}
+
+
+/* singup botton */
+
+.signup-link {
+    display: block;
+    margin-top: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    /* Light border for separation */
+    color: #ffffff;
+    /* White text color */
+    font-weight: 500;
+    /* Slightly bolder text */
+    transition: color 0.3s, transform 0.3s;
+    /* Smooth transition for hover effects */
+}
+
+.signup-link:hover {
+    color: #ffcc00;
+    /* Change color on hover */
+    transform: translateY(-2px);
+    /* Slight lift effect on hover */
+}
+
+
+.place-text-white::placeholder {
+    color: white !important;
+    opacity: 1;
+    /* Optional: makes sure it's not transparent */
+}
+
+.p-text-black:focus {
+    box-shadow: none !important;
+  outline: none !important;
+  border-color: inherit !important;
+}
+
+.p-text-black::placeholder {
+    color: #5e6061;
+    font-weight: 500;
+    
+}
+
+  /* three Dots Button  */
+
+.dots-btn{
+
+    border: 0 !important;
+    outline: 0 !important;
+    padding: 6px 14px;
+
+}

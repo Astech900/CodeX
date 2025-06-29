@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg bg-light rounded-2 sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand me-auto" href="/"><b><i>CodeX</i></b></a>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><b><i>CodeX</i></b></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active mx-lg-2" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+                <% if(typeof currentUser !== "undefined" && currentUser) { %>
+                   <a class="nav-link  mx-lg-2" href="/blogs/new/<%= currentUser %>">Write Blog <i
+                  class="bi bi-pencil"></i></a>
+                  <% }else { %>
+                     <a class="nav-link  mx-lg-2" href="/">All Posts </a>
+                    <% } %>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  mx-lg-2" href="#">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  mx-lg-2" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  mx-lg-2" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- <a href="/user/login" class="login-button">Login</a> -->
+    <% if(typeof currentUser !== "undefined" && currentUser) { %>
+      <a href="/user/logout" class="login-button">log out </a>
+
+      <% }else { %>
+        <a href="/user/login" class="login-button">log in</a>
+        <% } %>
+
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  </div>
+</nav>
